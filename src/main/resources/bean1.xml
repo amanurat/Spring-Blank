@@ -16,24 +16,21 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <context:component-scan base-package="com.training.spring"/>
-    <context:component-scan base-package="com.training.spring.repositories"/>
-    <context:annotation-config/>
-    <tx:annotation-driven/>
+    <import resource="bean1-1.xml"/>
 
-    <import resource="bean1.xml"/>
-    <import resource="hibernate.xml"/>
+    <bean id="hello"  class="com.training.spring.Hello"/>
 
+    <bean id="helloConstructor" class="com.training.spring.Hello">
+        <!--<constructor-arg type="java.lang.String" value="Hello Constructor"/>-->
 
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath:properties/resources.properties"/>
+        <constructor-arg ref="student"/>
+    </bean>
+
+    <bean id="helloSetter" class="com.training.spring.Hello">
+        <property name="country" value="English"></property>
+        <property name="student" ref="student"/>
     </bean>
 
 
-    
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath:properties/resources.properties"/>
-
-    </bean>
 
 </beans>

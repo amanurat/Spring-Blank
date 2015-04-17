@@ -17,9 +17,13 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 
+
     <!-- Database Configuration -->
     <import resource="hibernate.xml"/>
-<!---->
+
+    <!--Application Context Configuration-->
+    <import resource="applicationContext.xml"/>
+
     <!-- Auto scan the components -->
     <context:component-scan base-package="com.training.spring"/>
 

@@ -32,7 +32,7 @@ public class EmployeeServiceTest {
     @Transactional
     @Rollback(value = true)
     public void testSaveEmployee() throws Exception {
-        Employee employee = new Employee("June", "June");
+        Employee employee = new Employee("June", "June", null);
 
         employeeService.saveEmployee(employee);
 

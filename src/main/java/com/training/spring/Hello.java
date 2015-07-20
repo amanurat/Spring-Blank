@@ -1,6 +1,5 @@
 package com.training.spring;
 
-import com.hibernate.annotation.dao.EmployeeDao;
 
 import java.util.List;
 

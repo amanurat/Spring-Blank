@@ -36,10 +36,6 @@
 
     <!-- property Holder using multiple resources-->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location">
-            <value>properties/database.properties</value>
-        </property>
-
         <property name="locations">
             <list>
                 <value>properties/resources.properties</value>
@@ -85,12 +81,13 @@
 
     </bean>-->
 
+    <util:properties id="hibernateProperties" location="classpath:properties/hibernate.properties"/>
 
      <!--Hibernate SessionFactory using p name space -->
-     <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"
-           p:dataSource-ref="dataSource"
-           p:configLocation="${hibernate.config}"
-           p:packagesToScan="com.hibernate.annotation.entity"/>
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"
+          p:dataSource-ref="dataSource"
+          p:hibernateProperties-ref="hibernateProperties"
+          p:packagesToScan="com.hibernate.annotation.entity"/>
 
    <!-- Spring Hibernate Template-->
     <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">

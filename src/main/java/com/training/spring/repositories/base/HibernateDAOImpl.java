@@ -16,14 +16,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
-public abstract class HibernateDaoImpl<Entity, ID extends Serializable> implements GenericDao<Entity, ID> {
+public abstract class HibernateDAOImpl<Entity, ID extends Serializable> implements GenericDao<Entity, ID> {
 
     protected Class clazz;
 
     @Autowired
     protected SessionFactory sessionFactory;
 
-    public HibernateDaoImpl() {
+    public HibernateDAOImpl() {
         Type t = getClass().getGenericSuperclass();
         ParameterizedType pt = (ParameterizedType) t;
         clazz = (Class) pt.getActualTypeArguments()[0];

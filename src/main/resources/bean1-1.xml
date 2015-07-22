@@ -16,24 +16,30 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <context:component-scan base-package="com.training.spring"/>
-    <context:component-scan base-package="com.training.spring.repositories"/>
-    <context:annotation-config/>
-    <tx:annotation-driven/>
-
-    <import resource="bean1.xml"/>
-    <import resource="hibernate.xml"/>
-
-
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath:properties/resources.properties"/>
+    <bean id="student" class="com.training.spring.Student">
+        <property name="firstName" value="${first.name}"/>
+        <property name="lastName" value="${last.name}"/>
+        <property name="courseList" ref="someList"/>
+        <property name="courseMap" ref="someMap"/>
+        <property name="courseSet" ref="someSet"/>
     </bean>
 
+    <util:list id="someList" list-class="java.util.ArrayList">
+        <value>Java</value>
+        <value>PHP</value>
+    </util:list>
 
-    
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath:properties/resources.properties"/>
+    <util:map id="someMap">
+        <entry key="java" value="JAVA"></entry>
+        <entry key="php" value="PHP"></entry>
+    </util:map>
 
-    </bean>
+    <util:set id="someSet">
+        <value>Java</value>
+        <value>PHP</value>
+
+    </util:set>
+
+
 
 </beans>

@@ -16,7 +16,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="student" class="com.training.spring.Student">
+    <bean id="student" class="com.training.spring.bean.Student">
         <property name="firstName" value="${first.name}"/>
         <property name="lastName" value="${last.name}"/>
         <property name="courseList" ref="someList"/>

@@ -1,5 +1,8 @@
 package com.training.spring;
 
+import com.training.spring.bean.Hello;
+import com.training.spring.bean.Student;
+import com.training.spring.component.MyComponent;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -21,7 +24,7 @@ public class App {
     private static void loadConfigurationUseAnnotation() {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        ExampleComponent component = (ExampleComponent) context.getBean("theExampleComponent");
+        MyComponent component = (MyComponent) context.getBean("theExampleComponent");
 
         Student student = component.getStudent();
 

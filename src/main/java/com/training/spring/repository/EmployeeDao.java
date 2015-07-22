@@ -1,11 +1,10 @@
-package com.training.spring.repositories;
+package com.training.spring.repository;
 
 
 import com.hibernate.annotation.entity.Employee;
-import com.training.spring.repositories.base.GenericDao;
+import com.training.spring.repository.base.GenericDao;
 
 import java.io.Serializable;
-import java.util.List;
 
 public interface EmployeeDao extends GenericDao<Employee, Serializable> {
 

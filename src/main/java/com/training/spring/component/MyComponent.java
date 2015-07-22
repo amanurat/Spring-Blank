@@ -1,10 +1,12 @@
-package com.training.spring;
+package com.training.spring.component;
 
+import com.training.spring.bean.Hello;
+import com.training.spring.bean.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ExampleComponent {
+public class MyComponent {
 
     @Autowired
     private Student student;
@@ -12,7 +14,7 @@ public class ExampleComponent {
     private Hello hello;
 
     @Autowired
-    public ExampleComponent(Hello hello) {
+    public MyComponent(Hello hello) {
         this.hello = hello;
     }
 

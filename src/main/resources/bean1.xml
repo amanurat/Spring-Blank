@@ -18,15 +18,15 @@
 
     <import resource="bean1-1.xml"/>
 
-    <bean id="hello"  class="com.training.spring.Hello"/>
+    <bean id="hello"  class="com.training.spring.bean.Hello"/>
 
-    <bean id="helloConstructor" class="com.training.spring.Hello">
+    <bean id="helloConstructor" class="com.training.spring.bean.Hello">
         <!--<constructor-arg type="java.lang.String" value="Hello Constructor"/>-->
 
         <constructor-arg ref="student"/>
     </bean>
 
-    <bean id="helloSetter" class="com.training.spring.Hello">
+    <bean id="helloSetter" class="com.training.spring.bean.Hello">
         <property name="country" value="English"></property>
         <property name="student" ref="student"/>
     </bean>

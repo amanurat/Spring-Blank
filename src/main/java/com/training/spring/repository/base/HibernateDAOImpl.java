@@ -1,4 +1,4 @@
-package com.training.spring.repositories.base;
+package com.training.spring.repository.base;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;

@@ -2,7 +2,10 @@ package com.training.spring.component;
 
 import com.training.spring.bean.Hello;
 import com.training.spring.bean.Student;
+import com.training.spring.service.StudentService;
+import com.training.spring.service.impl.StudentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component

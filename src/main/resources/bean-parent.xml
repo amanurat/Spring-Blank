@@ -16,20 +16,31 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <import resource="bean1-1.xml"/>
-
-    <bean id="hello"  class="com.training.spring.bean.Hello"/>
-
-    <bean id="helloConstructor" class="com.training.spring.bean.Hello">
-        <!--<constructor-arg type="java.lang.String" value="Hello Constructor"/>-->
-
-        <constructor-arg ref="student"/>
+    <bean id="student" class="com.training.spring.bean.Student">
+        <property name="firstName" value="${first.name}"/>
+        <property name="lastName" value="${last.name}"/>
+        <property name="courseList" ref="someList"/>
+        <property name="courseMap" ref="someMap"/>
+        <property name="courseSet" ref="someSet"/>
     </bean>
 
-    <bean id="helloSetter" class="com.training.spring.bean.Hello">
-        <property name="country" value="English"></property>
-        <property name="student" ref="student"/>
-    </bean>
+    <util:list id="someList" list-class="java.util.ArrayList">
+        <value>Java</value>
+        <value>PHP</value>
+        <value>C#</value>
+    </util:list>
+
+    <util:map id="someMap">
+        <entry key="java" value="JAVA"></entry>
+        <entry key="php" value="PHP"></entry>
+        <entry key="python" value="pyhton"></entry>
+    </util:map>
+
+    <util:set id="someSet">
+        <value>Java</value>
+        <value>PHP</value>
+
+    </util:set>
 
 
 

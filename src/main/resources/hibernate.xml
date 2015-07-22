@@ -33,9 +33,6 @@
     </bean>
 -->
 
-    <import resource="bean1.xml"/>
-
-
     <!-- property Holder using multiple resources-->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">

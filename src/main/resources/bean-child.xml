@@ -30,6 +30,17 @@
         <property name="student" ref="student"/>
     </bean>
 
+    <!-- property Holder using multiple resources-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>properties/resources.properties</value>
+                <value>properties/database.properties</value>
+                <value>properties/hibernate.properties</value>
+            </list>
+        </property>
+
+    </bean>
 
 
 </beans>

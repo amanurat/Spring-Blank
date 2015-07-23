@@ -16,18 +16,18 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <context:component-scan base-package="com.training.spring.component"/>
-    <context:component-scan base-package="com.training.spring.service"/>
-    <context:component-scan base-package="com.training.spring.repository"/>
+    <context:component-scan base-package="com.training.spring"/>
     <context:annotation-config/>
     <tx:annotation-driven/>
 
-    <import resource="bean-child.xml"/>
     <import resource="hibernate.xml"/>
+    <import resource="bean-child.xml"/>
 
 
     <!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="classpath:properties/resources.properties"/>
     </bean>-->
+
+
 
 </beans>

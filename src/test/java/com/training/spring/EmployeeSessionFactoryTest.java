@@ -34,6 +34,7 @@ public class EmployeeSessionFactoryTest {
     public void testFindAllEmployees() throws Exception {
         Session session = sessionFactory.openSession();
         List<Employee> employees = session.createQuery("from Employee").list();
+        System.out.println(employees);
         assertThat(employees, is(notNullValue()));
     }
 

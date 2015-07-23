@@ -6,6 +6,7 @@ import com.training.spring.service.StudentService;
 import com.training.spring.service.impl.StudentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,6 +16,17 @@ public class MyComponent {
     private Student student;
 
     private Hello hello;
+
+
+    @Value(value = "${component.url}")
+    private String url;
+
+    @Value(value = "${component.username}")
+    private String username;
+
+    @Value(value = "${component.password}")
+    private String password;
+
 
     @Autowired
     public MyComponent(Hello hello) {
@@ -35,5 +47,30 @@ public class MyComponent {
 
     public void setHello(Hello hello) {
         this.hello = hello;
+    }
+
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
